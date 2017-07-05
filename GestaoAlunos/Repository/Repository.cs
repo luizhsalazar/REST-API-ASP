@@ -47,6 +47,18 @@ namespace GestaoAlunos.Repository
             return DbSet.ToList();
         }
 
+        public List<T> GetAll(params string[] includes)
+        {
+            var result = new List<T>();
+
+            foreach (var item in includes)
+            {
+                result = DbSet.Include(item).ToList();
+            }
+
+            return result;
+        }
+
         public T Incluir(T obj)
         {
             DbSet.Add(obj);

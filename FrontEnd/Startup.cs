@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,13 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using GestaoAlunos.Interfaces;
-using GestaoAlunos.Services;
-using GestaoAlunos.Repository;
-using GestaoAlunos.Models;
-using GestaoAlunos.Context;
 
-namespace APIRest
+namespace FrontEnd
 {
     public class Startup
     {
@@ -33,23 +28,33 @@ namespace APIRest
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddTransient<DataContext>();
-            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
-            services.AddTransient<IServicoAluno, ServicoAluno>();
-            services.AddTransient<IServicoCurso, ServicoCurso>();
-
-            services.AddMvc().AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            app.UseDeveloperExceptionPage();
-
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc();            
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
+
+            app.UseStaticFiles();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Interfaces\IServicoAluno.cs" />
+    <Compile Include="Interfaces\IServicoCurso.cs" />
     <Compile Include="Migrations\20170627125727_MigracaoInicial.cs" />
     <Compile Include="Migrations\20170627125727_MigracaoInicial.designer.cs">
       <DependentUpon>20170627125727_MigracaoInicial.cs</DependentUpon>

@@ -15,6 +15,7 @@ namespace GestaoAlunos.Repository
         T Alterar(T obj);
         T Excluir(T obj);
         List<T> GetAll();
+        List<T> GetAll(params string[] includes);
 
         void Salvar();
 

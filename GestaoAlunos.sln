@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoAlunos", "GestaoAlunos\GestaoAlunos.csproj", "{C903A127-6206-4D03-9FFF-BED66DF14BAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestGestaoAlunos", "UnitTestGestaoAlunos\UnitTestGestaoAlunos.csproj", "{F24DA957-F5D6-4515-B92A-31C8CACA66D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIRest", "APIRest\APIRest.csproj", "{829E3B2D-53FB-45C5-B5DF-1890D09C03E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{F8A42CF6-31CD-4CDA-A0ED-0D8532124ECC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{829E3B2D-53FB-45C5-B5DF-1890D09C03E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{829E3B2D-53FB-45C5-B5DF-1890D09C03E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{829E3B2D-53FB-45C5-B5DF-1890D09C03E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8A42CF6-31CD-4CDA-A0ED-0D8532124ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A42CF6-31CD-4CDA-A0ED-0D8532124ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A42CF6-31CD-4CDA-A0ED-0D8532124ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A42CF6-31CD-4CDA-A0ED-0D8532124ECC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

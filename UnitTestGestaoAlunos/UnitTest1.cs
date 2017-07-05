@@ -24,41 +24,6 @@ namespace UnitTestGestaoAlunos
         protected ServicoAluno ServicoAluno = new ServicoAluno(RepositorioAluno, RepositorioCurso, RepositorioAlunoCurso);
         protected ServicoDisciplina ServicoDisciplina = new ServicoDisciplina(RepositorioCursoDisciplina, RepositorioDisciplina, RepositorioCurso);
 
-        protected List<Aluno> Alunos = new List<Aluno>
-        {
-            new Aluno { Nome = "Luiz Henrique Salazar", DataCriacao = DateTime.Now },
-            new Aluno { Nome = "Sérgio Martins", DataCriacao = DateTime.Now },
-            new Aluno { Nome = "Felipe da Silva", DataCriacao = DateTime.Now },
-            new Aluno { Nome = "Alexandre Pereira", DataCriacao = DateTime.Now },
-            new Aluno { Nome = "Severino João", DataCriacao = DateTime.Now }
-        };
-
-        protected List<Curso> Cursos = new List<Curso>
-        {
-            new Curso { Nome = "Ciências da Computação", DataCriacao = DateTime.Now },
-            new Curso { Nome = "Sistema de Informação", DataCriacao = DateTime.Now },
-            new Curso { Nome = "Engenharia da Computação", DataCriacao = DateTime.Now },
-            new Curso { Nome = "Engenharia Mecânica", DataCriacao = DateTime.Now },
-            new Curso { Nome = "Arquitetura", DataCriacao = DateTime.Now }
-        };
-
-        protected List<Disciplina> Disciplinas = new List<Disciplina>
-        {
-            new Disciplina { Nome = "Cálculo I", DataCriacao = DateTime.Now },
-            new Disciplina { Nome = "Cálculo II", DataCriacao = DateTime.Now },
-            new Disciplina { Nome = "Cálculo III", DataCriacao = DateTime.Now },
-            new Disciplina { Nome = "Introdução a Computação", DataCriacao = DateTime.Now },
-            new Disciplina { Nome = "Engenharia de Software", DataCriacao = DateTime.Now }
-        };
-
-        //[TestMethod]
-        //public void TestMethodPopularBanco()
-        //{
-        //    Alunos.ForEach(a => RepositorioAluno.Incluir(a));
-        //    Cursos.ForEach(c => RepositorioCurso.Incluir(c));
-        //    Disciplinas.ForEach(d => RepositorioDisciplina.Incluir(d));
-        //}
-
         [TestMethod]
         public void TestMethodIncluirCursoSemDisciplina()
         {
@@ -117,7 +82,7 @@ namespace UnitTestGestaoAlunos
         [TestMethod]
         public void TestMethodMatricularAlunoCurso()
         {
-            var curso = RepositorioCurso.Consultar(2);
+            var curso = RepositorioCurso.Consultar(1);
             var aluno = RepositorioAluno.Consultar(1);
 
             var alunoMatriculadoCurso = ServicoAluno.MatricularAlunoCurso(aluno, curso);
